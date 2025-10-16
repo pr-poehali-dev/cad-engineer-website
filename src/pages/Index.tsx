@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -32,8 +32,25 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.observe-fade').forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background blueprint-bg">
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
@@ -61,9 +78,9 @@ const Index = () => {
       </header>
 
       <main>
-        <section id="home" className="py-20 bg-gradient-to-br from-secondary/40 via-background to-accent/10">
+        <section id="home" className="py-20 bg-gradient-to-br from-secondary/40 via-background to-accent/10 relative overflow-hidden">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center space-y-6">
+            <div className="max-w-3xl mx-auto text-center space-y-6 observe-fade">
               <h1 className="text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight">
                 Профессиональные кадастровые услуги
               </h1>
@@ -84,12 +101,12 @@ const Index = () => {
 
         <section id="services" className="py-20">
           <div className="container">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 observe-fade">
               <h2 className="text-4xl font-bold mb-4">Наши услуги</h2>
               <p className="text-muted-foreground text-lg">Полный спектр кадастровых работ</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-100">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="MapPin" size={24} className="text-primary" />
@@ -101,7 +118,7 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-200">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="FileText" size={24} className="text-primary" />
@@ -113,7 +130,7 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-300">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="BarChart3" size={24} className="text-primary" />
@@ -125,7 +142,7 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-400">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="Award" size={24} className="text-primary" />
@@ -137,7 +154,7 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-500">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="Search" size={24} className="text-primary" />
@@ -149,7 +166,7 @@ const Index = () => {
                 </CardHeader>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-lg transition-shadow observe-fade animation-delay-600">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon name="MessageCircle" size={24} className="text-primary" />
@@ -166,7 +183,7 @@ const Index = () => {
 
         <section id="calculator" className="py-20 bg-gradient-to-br from-accent/5 via-secondary/10 to-primary/5">
           <div className="container">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto observe-fade">
               <Card>
                 <CardHeader>
                   <CardTitle className="text-3xl">Калькулятор стоимости услуг</CardTitle>
@@ -227,7 +244,7 @@ const Index = () => {
 
         <section id="about" className="py-20">
           <div className="container">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto observe-fade">
               <h2 className="text-4xl font-bold mb-6 text-center">О компании</h2>
               <div className="space-y-4 text-lg text-muted-foreground">
                 <p>
@@ -243,7 +260,7 @@ const Index = () => {
               
               <Separator className="my-10" />
               
-              <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="grid md:grid-cols-3 gap-8 text-center observe-fade animation-delay-200">
                 <div>
                   <div className="text-4xl font-bold text-primary mb-2">10+</div>
                   <div className="text-muted-foreground">лет опыта</div>
@@ -263,7 +280,7 @@ const Index = () => {
 
         <section id="contacts" className="py-20 bg-gradient-to-br from-primary/5 via-secondary/15 to-accent/10">
           <div className="container">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto observe-fade">
               <h2 className="text-4xl font-bold mb-6 text-center">Контакты</h2>
               <Card>
                 <CardContent className="pt-6">
