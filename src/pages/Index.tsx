@@ -21,7 +21,7 @@ const Index = () => {
   const { toast } = useToast();
 
   const services = [
-    { value: 'land-plot', label: 'Межевание земельного участка', basePrice: 15000, pricePerUnit: 300 },
+    { value: 'land-plot', label: 'Межевание земельного участка', basePrice: 15000, pricePerUnit: 0 },
     { value: 'tech-plan', label: 'Технический план здания', basePrice: 20000, pricePerUnit: 500 },
     { value: 'document', label: 'Акт обследования', basePrice: 12000, pricePerUnit: 200 },
     { value: 'consultation', label: 'Консультация', basePrice: 5000, pricePerUnit: 0 },
