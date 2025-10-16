@@ -55,7 +55,10 @@ const Index = () => {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="MapPin" size={28} className="text-primary" />
-            <span className="text-xl font-bold text-primary">Кадастровые услуги</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-primary">Городской кадастр недвижимости</span>
+              <span className="text-xs text-muted-foreground">ООО</span>
+            </div>
           </div>
           <nav className="hidden md:flex gap-6">
             <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors">
@@ -344,7 +347,7 @@ const Index = () => {
       <footer className="border-t py-8 bg-white">
         <div className="container">
           <div className="text-center text-sm text-muted-foreground">
-            <p>© 2025 Кадастровые услуги. Все права защищены.</p>
+            <p>© 2025 ООО "Городской кадастр недвижимости". Все права защищены.</p>
           </div>
         </div>
       </footer>
