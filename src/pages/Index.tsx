@@ -281,6 +281,138 @@ const Index = () => {
           </div>
         </section>
 
+        <section className="py-20 bg-gradient-to-br from-secondary/10 to-accent/5">
+          <div className="container">
+            <div className="text-center mb-12 observe-fade">
+              <h2 className="text-4xl font-bold mb-4">Наши преимущества</h2>
+              <p className="text-muted-foreground text-lg">Почему выбирают нас</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="text-center observe-fade animation-delay-100">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name="ShieldCheck" size={32} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Лицензия и аккредитация</h3>
+                  <p className="text-sm text-muted-foreground">Все специалисты имеют официальную аккредитацию и квалификацию</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center observe-fade animation-delay-200">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Clock" size={32} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Быстрые сроки</h3>
+                  <p className="text-sm text-muted-foreground">Выполнение работ в установленные сроки без задержек</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center observe-fade animation-delay-300">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name="FileCheck" size={32} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Гарантия качества</h3>
+                  <p className="text-sm text-muted-foreground">Все документы соответствуют требованиям законодательства</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center observe-fade animation-delay-400">
+                <CardContent className="pt-6">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name="Handshake" size={32} className="text-primary" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">Индивидуальный подход</h3>
+                  <p className="text-sm text-muted-foreground">Персональное решение для каждого клиента</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container">
+            <div className="text-center mb-12 observe-fade">
+              <h2 className="text-4xl font-bold mb-4">Отзывы клиентов</h2>
+              <p className="text-muted-foreground text-lg">Что говорят о нас</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="observe-fade animation-delay-100">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-1 mb-4">
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Профессиональный подход и быстрое выполнение межевания участка. Все документы оформили без единой ошибки. Рекомендую!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold">Алексей М.</div>
+                      <div className="text-sm text-muted-foreground">Межевание участка</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="observe-fade animation-delay-200">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-1 mb-4">
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Обратились за техническим планом здания. Работа выполнена качественно и в срок. Сотрудники компетентны и вежливы."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold">Мария К.</div>
+                      <div className="text-sm text-muted-foreground">Технический план</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="observe-fade animation-delay-300">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-1 mb-4">
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                    <Icon name="Star" size={20} className="text-accent fill-accent" />
+                  </div>
+                  <p className="text-muted-foreground mb-4">
+                    "Отличная компания! Помогли с консультацией по всем вопросам, подготовили все необходимые документы. Спасибо!"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Icon name="User" size={20} className="text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold">Дмитрий П.</div>
+                      <div className="text-sm text-muted-foreground">Консультация</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         <section id="contacts" className="py-20 bg-gradient-to-br from-primary/5 via-secondary/15 to-accent/10">
           <div className="container">
             <div className="max-w-2xl mx-auto observe-fade">
