@@ -18,14 +18,14 @@
     --primary: 211 57% 33%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 214 31% 91%;
+    --secondary: 197 71% 73%;
     --secondary-foreground: 215 25% 27%;
 
     --muted: 214 31% 91%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 214 31% 91%;
-    --accent-foreground: 211 57% 33%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 215 25% 27%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -34,7 +34,7 @@
     --input: 214 31% 91%;
     --ring: 211 57% 33%;
 
-    --radius: 0.375rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 

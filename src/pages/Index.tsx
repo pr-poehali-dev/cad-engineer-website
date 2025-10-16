@@ -61,17 +61,17 @@ const Index = () => {
       </header>
 
       <main>
-        <section id="home" className="py-20 bg-gradient-to-b from-secondary/30 to-background">
+        <section id="home" className="py-20 bg-gradient-to-br from-secondary/40 via-background to-accent/10">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h1 className="text-5xl font-bold text-foreground leading-tight">
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight">
                 Профессиональные кадастровые услуги
               </h1>
               <p className="text-xl text-muted-foreground">
                 Точность, надёжность и соблюдение всех законодательных норм
               </p>
               <div className="flex gap-4 justify-center pt-4">
-                <Button onClick={() => scrollToSection('calculator')} size="lg" className="font-semibold">
+                <Button onClick={() => scrollToSection('calculator')} size="lg" className="font-semibold bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary transition-all">
                   Рассчитать стоимость
                 </Button>
                 <Button onClick={() => scrollToSection('contacts')} size="lg" variant="outline" className="font-semibold">
@@ -164,7 +164,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="calculator" className="py-20 bg-secondary/20">
+        <section id="calculator" className="py-20 bg-gradient-to-br from-accent/5 via-secondary/10 to-primary/5">
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <Card>
@@ -261,7 +261,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contacts" className="py-20 bg-secondary/20">
+        <section id="contacts" className="py-20 bg-gradient-to-br from-primary/5 via-secondary/15 to-accent/10">
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-4xl font-bold mb-6 text-center">Контакты</h2>
