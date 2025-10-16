@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -6,11 +6,19 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
 import { Separator } from '@/components/ui/separator';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
   const [serviceType, setServiceType] = useState('');
   const [area, setArea] = useState('');
   const [calculatedPrice, setCalculatedPrice] = useState<number | null>(null);
+  
+  const [formName, setFormName] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formMessage, setFormMessage] = useState('');
+  const { toast } = useToast();
 
   const services = [
     { value: 'land-plot', label: 'Межевание земельного участка', basePrice: 15000, pricePerUnit: 300 },
@@ -25,6 +33,18 @@ const Index = () => {
       const total = service.basePrice + (service.pricePerUnit * parseFloat(area));
       setCalculatedPrice(total);
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: 'Заявка отправлена!',
+      description: 'Мы свяжемся с вами в ближайшее время.',
+    });
+    setFormName('');
+    setFormPhone('');
+    setFormEmail('');
+    setFormMessage('');
   };
 
   const scrollToSection = (id: string) => {
@@ -469,6 +489,68 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+
+              <Card className="mt-8 observe-fade animation-delay-200">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Оставить заявку</CardTitle>
+                  <CardDescription>
+                    Заполните форму и мы свяжемся с вами в ближайшее время
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Имя *</Label>
+                      <Input
+                        id="name"
+                        placeholder="Ваше имя"
+                        value={formName}
+                        onChange={(e) => setFormName(e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Телефон *</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+7 (___) ___-__-__"
+                        value={formPhone}
+                        onChange={(e) => setFormPhone(e.target.value)}
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={formEmail}
+                        onChange={(e) => setFormEmail(e.target.value)}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Сообщение *</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Опишите вашу задачу или задайте вопрос"
+                        value={formMessage}
+                        onChange={(e) => setFormMessage(e.target.value)}
+                        rows={4}
+                        required
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full font-semibold" size="lg">
+                      Отправить заявку
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>
